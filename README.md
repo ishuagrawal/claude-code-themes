@@ -1,10 +1,8 @@
-[![The rainy-window theme in the Claude desktop app: a cozy halftone room at night, rain on the window, a record playing, and Clawd typing at his desk, then the chat fades in over it](assets/rainy-window.gif)](assets/rainy-window.mp4)
+![The rainy-window theme in the Claude desktop app: a cozy halftone room at night, rain on the window, a record playing, and Clawd typing at his desk, then the chat fades in over it](assets/rainy-window.gif)
 
 # claude-code-themes
 
 Animated themes for the Code tab of the Claude desktop app. Each theme recolors the app and paints a living scene behind your conversation, drawn in the same style as the app. Under the hood, each one is a Claude Code [mod](https://code.claude.com/docs/en/plugins/mods/overview) packaged as a plugin.
-
-▶ [Full-quality video (MP4, 5 seconds)](assets/rainy-window.mp4)
 
 ## Themes
 
