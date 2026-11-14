@@ -1,0 +1,11 @@
+{
+  "name": "rainy-window",
+  "version": "0.3.0",
+  "description": "A theme for the Claude desktop and mobile apps: Clawd's room on a rainy day, in halftone dots, with rain at the window, a record spinning, and Clawd typing at his desk",
+  "author": { "name": "Ishu Agrawal", "url": "https://github.com/ishuagrawal" },
+  "homepage": "https://github.com/ishuagrawal/claude-code-themes",
+  "repository": "https://github.com/ishuagrawal/claude-code-themes",
+  "license": "MIT",
+  "keywords": ["mod", "theme", "backdrop", "clawd", "lofi", "pixel-art"],
+  "types": "./types/index.d.ts"
+}

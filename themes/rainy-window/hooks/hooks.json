@@ -1,0 +1,4 @@
+{
+  "description": "The rainy-window theme: sets the colors and the backdrop, and draws the scene",
+  "modules": ["./register.ts"]
+}

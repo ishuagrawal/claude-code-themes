@@ -1,0 +1,16 @@
+{
+  "name": "claude-code-themes",
+  "owner": { "name": "Ishu Agrawal", "url": "https://github.com/ishuagrawal" },
+  "metadata": {
+    "description": "Themes for the Code tab of the Claude desktop app: colors and a living scene behind the conversation"
+  },
+  "plugins": [
+    {
+      "name": "rainy-window",
+      "source": "./themes/rainy-window",
+      "description": "Clawd's room on a rainy day, in halftone dots: rain at the window, a record spinning, and Clawd typing at his desk",
+      "version": "0.3.0",
+      "category": "theme"
+    }
+  ]
+}
