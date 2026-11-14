@@ -37,4 +37,8 @@ It follows the docs' recipe for [a backdrop behind the conversation](https://cod
 - `hooks/register.ts` sets the theme, adds the command, and draws the backdrop. The scene doesn't follow the session, so it's drawn once and never redrawn.
 - The desktop app moves a backdrop only if the drawing passes its check, and otherwise shows a still copy with the motion stripped out. The check allows a short list of SVG elements and CSS functions, no viewport units, and no media queries except reduced motion's. It also times every frame and holds a scene still if drawing it averages more than about 5.6 ms. So the scene animates with SMIL (`<animate>`, `<animateTransform>`), anchors itself with nested `<svg>` elements instead of `vw`/`vh`, and draws its dots as small patterns rather than masks (about 2.5 ms a frame). It can't ask `prefers-color-scheme` either, so each color is a relative color from `currentColor`, the app's text color, which the app sets on the drawing: dark ink means a light window, cream a dark one.
 - `hooks/scene.ts` builds the room: one SVG in the window's own pixels, anchored to the window's edges. Every dotted shape is filled with a 6px dot pattern at one of five dot sizes, so the dots line up across the scene, and Clawd's sprite is masked by a grid of its own with one dot per pixel at the same pitch.
-- `hooks/clawd/` holds a copy of clawdhouse's engine (only its arm and leg tables are newly exported). `sheet.ts` draws Clawd's body and face with it in a loop of typing poses, played as a sprite sheet that SMIL steps through.
+- `hooks/clawd/body.ts` is Clawd's body and face as clawdhouse draws them, cut down to what the scene uses. `sheet.ts` draws him in a loop of typing poses, played as a sprite sheet that SMIL steps through.
+
+## License
+
+[MIT](LICENSE)

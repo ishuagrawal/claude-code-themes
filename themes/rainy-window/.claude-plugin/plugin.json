@@ -6,6 +6,5 @@
   "homepage": "https://github.com/ishuagrawal/claude-code-themes",
   "repository": "https://github.com/ishuagrawal/claude-code-themes",
   "license": "MIT",
-  "keywords": ["mod", "theme", "backdrop", "clawd", "lofi", "pixel-art"],
-  "types": "./types/index.d.ts"
+  "keywords": ["mod", "theme", "backdrop", "clawd", "lofi", "pixel-art"]
 }

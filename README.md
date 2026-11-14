@@ -48,14 +48,10 @@ Each theme is a folder under [`themes/`](themes), listed in [`.claude-plugin/mar
 ln -s "$PWD/themes/rainy-window" ~/.claude/skills/rainy-window
 ```
 
-Uninstall the marketplace copy first, since two plugins with the same name can't both load. Then check and test it from the repository root:
+Uninstall the marketplace copy first, since two plugins with the same name can't both load. Then check it from the repository root:
 
 ```bash
 claude plugin validate themes/rainy-window
-```
-
-```bash
-cd themes/rainy-window && claude plugin test
 ```
 
 To add a theme, give it a folder under `themes/`, add it to `marketplace.json`, and add a row to the table above. [rainy-window's README](themes/rainy-window/README.md#how-it-works) explains what the desktop app requires before it will animate a backdrop.
@@ -64,4 +60,4 @@ Built and tested with Claude Code 2.1.325. Mods are an early-access API and may 
 
 ## License
 
-MIT
+[MIT](LICENSE)

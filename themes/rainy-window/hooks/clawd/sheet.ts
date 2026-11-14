@@ -1,12 +1,12 @@
 // Clawd for the backdrop: the plain mascot, drawn the way clawdhouse draws his
-// body and face, with no hats, glasses or props on him. He's turned a little
+// body and face (body.ts), with no hats, glasses or props on him. He's turned a little
 // toward the conversation, typing on the laptop in front of him: a short
 // script of poses that loops as a sprite sheet, stepped by SMIL.
 //
 // The scene turns each of his pixels into one round dot, so every pose here is
 // plain pixels; the dots come from the scene's mask.
 
-import * as E from './engine'
+import * as E from './body'
 
 // His canvas: 24 x 16 pixels and a pixel of room on each side.
 export const SHEET_W = E.W0 + 2
@@ -43,9 +43,9 @@ function script(): [Pose, number][] {
 }
 
 // One pose as pixels: his body, arms and legs in 2 x 2 blocks, then his face,
-// as the engine lays them out. Turned a little: his face sits a pixel toward
+// as clawdhouse lays them out. Turned a little: his face sits a pixel toward
 // his front, and his far side and far arm are in shade.
-function paint(pose: Pose, sim: E.Sim) {
+function paint(pose: Pose) {
   const px: (string | undefined)[] = new Array(SHEET_W * SHEET_H)
   const put = (x: number, y: number, c: string) => {
     if (x >= 0 && x < SHEET_W && y >= 0 && y < SHEET_H) px[y * SHEET_W + x] = c
@@ -65,7 +65,7 @@ function paint(pose: Pose, sim: E.Sim) {
     block(x, 6, c)
     block(x, 7, c)
   }
-  E.drawFace(pose.face, sim, (x, y, c) => put(ox + x - 1, oy + y, c))
+  E.drawFace(pose.face, (x, y, c) => put(ox + x - 1, oy + y, c))
 
   const byColor = new Map<string, string[]>()
   for (let y = 0; y < SHEET_H; y++) {
@@ -91,21 +91,6 @@ let cached: Sheet | undefined
 
 export function clawdSheet(): Sheet {
   if (cached) return cached
-  const sim = E.newSim({
-    mood: 'idle',
-    label: '',
-    detail: '',
-    seq: 0,
-    helpers: 0,
-    tint: '',
-    hour: 14,
-    isBig: false,
-    month: 0,
-    day: 1,
-    react: { kind: 'hello', text: '', seq: 0 },
-  })
-  sim.dir = -1
-  sim.blink = 0
 
   // Each pose lasts a whole number of ticks, so the frames change on the
   // scene's clock.
@@ -117,7 +102,7 @@ export function clawdSheet(): Sheet {
   const spans = new Map<string, [number, number][]>()
   let t = 0
   for (const [pose, len] of frames) {
-    const art = paint(pose, sim)
+    const art = paint(pose)
     const list = spans.get(art) ?? []
     list.push([t, t + len])
     spans.set(art, list)
