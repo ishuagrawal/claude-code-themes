@@ -1,4 +1,4 @@
-[![The rainy-window theme in the Claude desktop app: a chat in the middle, and around it a cozy halftone room at night, rain on the window, a record playing, and Clawd typing at his desk](assets/rainy-window.gif)](assets/rainy-window.mp4)
+[![The rainy-window theme in the Claude desktop app: a cozy halftone room at night, rain on the window, a record playing, and Clawd typing at his desk, then the chat fades in over it](assets/rainy-window.gif)](assets/rainy-window.mp4)
 
 # claude-code-themes
 
